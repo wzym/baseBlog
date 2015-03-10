@@ -1,0 +1,10 @@
+<h3>Форма для отправки новости на сервер</h3>
+<form action="/Admin/Add" method="post" enctype="multipart/form-data">
+    <input name="title" class="editelements" id="title"/>
+    <label for="title">Ввести заголовок</label> <br />
+    <textarea name="text" class="editelements" id="text"></textarea>
+    <label for="text">Ввести текст</label> <br />
+    <input type="date" name="date"/>
+    <input type="submit" />
+</form>
+<a href="/Admin/ViewLog/0">Посмотреть лог</a>
