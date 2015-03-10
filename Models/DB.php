@@ -17,7 +17,6 @@ class DB {
             $exc403 = new E403Exception('Соединиться с БД не удалось. В остальном всё работает как часы.');
             throw $exc403;
         }
-
     }
 
     public function setClassName($className) {
