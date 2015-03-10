@@ -1,9 +1,15 @@
 <?php
 
+namespace Application\controllers;
+use Application\Models\errors\E404Exception;
+
+use Application\Models\News as NewsModel;
+use Application\views\View;
+
 class NewsController {
 
     public function actionShowAll() {
-        $items = News::findAll();
+        $items = NewsModel::findAll();
         if (empty($items)) {
             $exc = new E404Exception('Новостей в базе не нашлось. Это, очевидно, неверно. Попробуйте попытаться позже');
             throw $exc;
@@ -15,7 +21,7 @@ class NewsController {
     }
 
     public function actionShowOne() {
-        $item = News::findByColumn('id', $this->setId());
+        $item = NewsModel::findByColumn('id', $this->setId());
         if (empty($item)) {
             $exc = new E404Exception('Запрошенной новости не нашлось. Посмотрите другую.');
             throw $exc;

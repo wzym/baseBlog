@@ -1,8 +1,12 @@
 <?php
 
+namespace Application\controllers;
+
+use Application\views\View;
+
 class AdminController {
     private $newToAdd;          // поле для сохранения новой новости, чтобы эту готовую новость отправить в БД
-    private $className = 'News';
+    private $className = 'Application\Models\News';
 
     public function actionAdd() {           // создаёт новый объект новости и передаёт его в функцию для сохранения в БД
         $this->buildNew();

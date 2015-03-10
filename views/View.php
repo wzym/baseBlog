@@ -1,6 +1,8 @@
 <?php
 
-class View implements Iterator {
+namespace Application\views;
+
+class View implements \Iterator {
     private $content;     // поле для хранения адреса вложенной вьюшки
     private $tempContent;
     public $infoToShow = [];

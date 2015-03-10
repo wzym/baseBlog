@@ -1,5 +1,7 @@
 <?php
 
+namespace Application\Models;
+
 class Notes extends AbstractArticle {
     public $author;
     public $note;

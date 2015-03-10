@@ -1,5 +1,7 @@
 <?php
 
+namespace Application\Models;
+
 class News extends AbstractArticle {
     public $title;
     public $date;

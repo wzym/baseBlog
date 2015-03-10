@@ -1,13 +1,18 @@
 <?php
 
+namespace Application\Models;
+
+use Application\Models\errors\E403Exception;
+use Application\Models\errors\EventLog;
+
 class DB {
     private $dbh;
     private $className = 'stdClass';
 
     public function __construct() {
         try{
-            $this->dbh = new PDO('mysql:dbname=lesson01;host=localhost', 'root', '');
-        } catch (PDOException $e) {
+            $this->dbh = new \PDO('mysql:dbname=lesson01;host=localhost', 'root', '');
+        } catch (\PDOException $e) {
             $this->saveLog($e);
             $exc403 = new E403Exception('Соединиться с БД не удалось. В остальном всё работает как часы.');
             throw $exc403;
@@ -24,14 +29,14 @@ class DB {
 
         try {
             $res = $sth->execute($params);
-        } catch (PDOException $errPDO) {
+        } catch (\PDOException $errPDO) {
             $this->saveLog($errPDO);
             $exc403 = new E403Exception('Удалось даже соединиться, но запрос оказался некорректным.');
             throw $exc403;
 
         }
         if (true === $isReturnable) {
-            return $sth->fetchAll(PDO::FETCH_CLASS, $this->className);
+            return $sth->fetchAll(\PDO::FETCH_CLASS, $this->className);
         }
         return $res;
     }

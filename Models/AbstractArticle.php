@@ -1,7 +1,9 @@
 <?php
 
+namespace Application\Models;
+
 abstract class AbstractArticle
-        implements ArrayAccess {
+        implements \ArrayAccess {
 
     public $id;     // объявляю здесь, так как будет у всех наследников
     static protected $table;

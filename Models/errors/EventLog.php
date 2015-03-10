@@ -1,5 +1,7 @@
 <?php
 
+namespace Application\Models\errors;
+
 class EventLog {
     private $filename;
     private $lineNum;
@@ -15,7 +17,7 @@ class EventLog {
     }
 
     private function saveEvent() {
-        $handle = fopen(__DIR__ . '/../views/log.html', 'a');
+        $handle = fopen(__DIR__ . '/../../views/log.html', 'a');
         $stringToAdd = '<div>' .
                         'Время события: ' . $this->time . '.<br />' .
                         'Сообщение: ' . $this->message . '.<br />' .
