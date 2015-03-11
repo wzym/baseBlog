@@ -4,6 +4,8 @@
 
 #content {margin-left: 150px; float: left;}
 
+#gotText {display: block;}
+
 a {text-decoration: none; color: black;}
 
 a:hover {color: crimson; background-color: aquamarine;}

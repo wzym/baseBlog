@@ -27,5 +27,4 @@ try {
     $controller->actionShowError($exc403->getMessage());
 }
 
-echo PHP_Timer::stop() . '; ';
-echo PHP_Timer::resourceUsage();
+//echo PHP_Timer::resourceUsage();
