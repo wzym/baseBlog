@@ -1,6 +1,11 @@
+/*
+При наведении курсора мыши на элемент списка новостей осуществляется
+ajax-запрос, и блоке после списка появляется вся информация
+по этой новости.
+ */
 window.onload = function() {
     var item = document.getElementById('listOfNews');
-    item.onclick = function(e) {
+    item.onmouseover = function(e) {
         e = e || window.event;
         var id = e.toElement.id;
         ajax1(id);
@@ -20,7 +25,6 @@ window.onload = function() {
 
     function result(output) {
         var gotNew = JSON.parse(output);
-        console.log(gotNew);
         document.getElementById('gotId').innerHTML = gotNew.id;
         document.getElementById('gotDate').innerHTML = gotNew.date;
         document.getElementById('gotTitle').innerHTML = gotNew.title;
