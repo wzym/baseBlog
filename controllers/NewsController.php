@@ -1,8 +1,8 @@
 <?php
 
 namespace Application\controllers;
-use Application\Models\errors\E404Exception;
 
+use Application\Models\errors\E404Exception;
 use Application\Models\News as NewsModel;
 use Application\views\View;
 
