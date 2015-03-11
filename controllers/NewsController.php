@@ -32,6 +32,12 @@ class NewsController {
         $view->display();
     }
 
+    public function actionAjaxOne() {
+        $item = NewsModel::findByColumn('id', $this->setId());
+        $item = json_encode($item);
+        echo $item;
+    }
+
     private function setId() {
         return (int) $_GET['id'];
     }

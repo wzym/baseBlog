@@ -2,7 +2,7 @@
 
 #menu {float: left;}
 
-#content {margin-left: 150px;}
+#content {margin-left: 150px; float: left;}
 
 a {text-decoration: none; color: black;}
 

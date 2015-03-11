@@ -1,10 +1,16 @@
 <h3>Новости:</h3>
-<ul>
+<ul id="listOfNews">
     <?php foreach ($this as $items): ?>
         <?php foreach ($items as $item): ?>
-            <li><a href="/news/showOne/<?php echo $item->id;?>">
+            <li class="elementOfList" id="<?php echo $item->id;?>">
                 <?php echo $item->title . ': ' . $item->date; ?>
-            </a></li>
+            </li>
         <?php endforeach; ?>
     <?php endforeach; ?>
 </ul>
+<div id="review">
+    <span id="gotId"></span>
+    <span id="gotDate"></span>
+    <span id="gotTitle"></span>
+    <span id="gotText"></span>
+</div>
