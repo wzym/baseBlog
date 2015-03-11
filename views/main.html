@@ -2,15 +2,19 @@
 <ul id="listOfNews">
     <?php foreach ($this as $items): ?>
         <?php foreach ($items as $item): ?>
-            <li class="elementOfList" id="<?php echo $item->id;?>">
-                <?php echo $item->title . ': ' . $item->date; ?>
+            <li class="elementOfList">
+                <a href="news/showOne/<?php echo $item->id;?>" id="<?php echo $item->id;?>">
+                    <?php echo $item->title . ': ' . $item->date; ?>
+                </a>
             </li>
         <?php endforeach; ?>
     <?php endforeach; ?>
 </ul>
+</div>
 <div id="review">
+    <h4><span id="gotTitle"></span></h4>
     <span id="gotId"></span>
     <span id="gotDate"></span>
-    <span id="gotTitle"></span>
     <span id="gotText"></span>
 </div>
+<div>
